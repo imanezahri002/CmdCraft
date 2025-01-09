@@ -12,7 +12,7 @@ class ProductManager
         $products = $stmt->fetchAll();
         $data = [];
         foreach ($products as $product) {
-            $data[] = new Product($product['name'], $product['prix'], $product['description'], $product['quantity'],$product['image']);
+            $data[] = new Product($product['name'], $product['prix'], $product['description'], $product['quantity'],$product['image'],$product['id']);
         };
         return $data;// [ Product, Product, Product]
     }
@@ -24,10 +24,9 @@ class ProductManager
                     <td>".$produit->getPrice()."</td>
                     <td><img width ='60px' src='".$produit->getImage()."'></td>
                     <td>".$produit->getQuantity()."</td>
-
                     <td>
-                        <a class='btn btn-primary' href='/products/edit.php?id=".$produit ->getId()."'>Edit</a>
-                        <a class='btn btn-danger' href='/products/delete.php?id=".$produit ->getId()."'>Delete</a>
+                        <a class='btn btn-primary' href='../Admin/editPr.php?id=". $produit ->getId() ."'>Edit</a>
+                        <a class='btn btn-danger' href='../Admin/deletePr.php?id=".$produit ->getId()."'>Delete</a>
                     </td>
                 </tr>";
     }
@@ -76,6 +75,7 @@ class ProductManager
             ":quantity"=>$product->getQuantity(),
             ":description"=>$product->getDescription()
         ]);
+        
     }
     
 }

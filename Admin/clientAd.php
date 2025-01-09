@@ -1,6 +1,6 @@
 <?php
 include './layout/header.php';
-include './layout/aside.php';
+// include './layout/aside.php';
 include '../classes/Admin.php';
 
 ?>
@@ -37,8 +37,8 @@ include '../classes/Admin.php';
       <th scope="col">Nom</th>
       <th scope="col">Email</th>
       <th scope="col">Tel</th>
-      <th scope="col">Activer</th>
-      <th scope="col">Desactiver</th>
+      <th scope="col">Status</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -46,11 +46,9 @@ include '../classes/Admin.php';
    $clients = new Admin(null ,null,null,null);
    $clients->displayCl();
    ?>
-   
   </tbody>
 </table>
       </div>
-            
 </div>
 
 

@@ -9,19 +9,20 @@ $productM=new ProductManager();
 $products=$productM->displayAll();
 
 if(isset($_POST["add"])){
-     $nom=$_POST["nom"];
-     $description=$_POST["desc"];
-     $image=$_POST["img"];
-     $prix=$_POST["price"];
-     $quantity=$_POST["qte"];
-     
-     $pdt=new Product($nom, $description, $prix, $quantity,$image);
-     $productM->add($pdt);
-     header ("location:produitAd.php");
+    $nom=$_POST["nom"];
+    $description=$_POST["desc"];
+    $image=$_POST["img"];
+    $prix=$_POST["price"];
+    $quantity=$_POST["qte"];
+    
+    $pdt=new Product($nom, $description, $prix, $quantity,$image);
+    $productM->add($pdt);
+   header('location:produitAd.php');
 
 }
+
 ?>
-   <!-- ========================= Main ==================== -->
+   
    <div class="main">
             <div class="topbar">
                 <div class="toggle">
@@ -39,7 +40,7 @@ if(isset($_POST["add"])){
                 </div>
             </div>
         
-            <!-- ================ Order Details List ================= -->
+            
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
@@ -115,6 +116,7 @@ if(isset($_POST["add"])){
 </table>
       </div>
 </div>
+
 <?php
 include './layout/footer.php';
 ?>
